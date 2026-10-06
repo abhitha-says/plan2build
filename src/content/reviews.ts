@@ -1,82 +1,45 @@
 import type { Review } from './types';
 
-/** Captured from the reference site's CMS. */
+/**
+ * The quote comparison demo: three contractors quoting the same 2,650 sq ft, G+1 house in
+ * Raipur. The structure is real; the figures are illustrative. Each `result` is the quote's
+ * total once every gap against the specification is priced in.
+ */
+
+const HOUSE_PHOTO = { "src": "/images/house-blueprint.webp", "width": 1536, "height": 1024 };
 
 export const reviews: Review[] = [
   {
-    "slug": "daniel-okafor",
-    "name": "Daniel Okafor",
-    "role": "COO, Northline Logistics",
-    "quote": "They gave us a date in January and handed us the keys on that date in July. In fifteen years of building depots that has happened once.",
-    "project": "Depot 9",
-    "result": "Handed over on the day",
+    "slug": "contractor-a",
+    "name": "Contractor A",
+    "role": "Quoted ₹48.20 L",
+    "quote": "Every line priced against the specification. Scope complete as issued, nothing to add.",
+    "project": "2,650 sq ft · G+1 · Raipur",
+    "result": "₹48.20 L",
     "rating": 5,
-    "portrait": {
-      "src": "https://framerusercontent.com/images/I0ubK7IyFLH8dEuuzKskPcjTL2w.webp",
-      "width": 1200,
-      "height": 1500
-    },
-    "projectPhoto": {
-      "src": "https://framerusercontent.com/images/BMTIfrTEJudcjLr0XOEE7s4tyJc.webp",
-      "width": 2000,
-      "height": 1342
-    }
+    "portrait": null,
+    "projectPhoto": HOUSE_PHOTO
   },
   {
-    "slug": "hugo-bremner",
-    "name": "Hugo Bremner",
-    "role": "Chair, Foundry Lofts LLC",
-    "quote": "A hundred-year-old warehouse hides things. Every time it did, Girder showed us the problem, the price and the fix the same afternoon.",
-    "project": "Foundry Lofts",
-    "result": "$0 over budget",
+    "slug": "contractor-b",
+    "name": "Contractor B",
+    "role": "Quoted ₹44.60 L · looked cheapest by ₹3.6 L",
+    "quote": "No waterproofing to the terrace or bathrooms (+₹1.85 L). Fe500 steel where the drawings call for Fe500D (+₹0.62 L). No compound wall or gate (+₹1.40 L). 12 mm plaster against 15 mm (+₹0.48 L).",
+    "project": "2,650 sq ft · G+1 · Raipur",
+    "result": "₹48.95 L",
     "rating": 5,
-    "portrait": {
-      "src": "https://framerusercontent.com/images/fgiw3h2Lk9Eg7vKMEBs87hB2e0.webp",
-      "width": 1200,
-      "height": 1500
-    },
-    "projectPhoto": {
-      "src": "https://framerusercontent.com/images/DplHheHwQpC4RAyb4YJUkubYE4A.webp",
-      "width": 2000,
-      "height": 1342
-    }
+    "portrait": null,
+    "projectPhoto": HOUSE_PHOTO
   },
   {
-    "slug": "priya-raman",
-    "name": "Priya Raman",
-    "role": "Homeowner, Lincoln Park",
-    "quote": "We lived in the house the whole time. The dust wall went up on day one and the site was swept every evening before we got home.",
-    "project": "Linden Kitchen",
-    "result": "Done in 6 weeks",
+    "slug": "contractor-c",
+    "name": "Contractor C",
+    "role": "Quoted ₹49.80 L",
+    "quote": "Includes a false ceiling in two rooms you did not ask for (−₹1.20 L).",
+    "project": "2,650 sq ft · G+1 · Raipur",
+    "result": "₹48.60 L",
     "rating": 5,
-    "portrait": {
-      "src": "https://framerusercontent.com/images/bD3IjFulEA5KGH9dldm1PafOjog.webp",
-      "width": 1200,
-      "height": 1500
-    },
-    "projectPhoto": {
-      "src": "https://framerusercontent.com/images/am5cv7yCeQr77oBvgz5TSbyUPw.webp",
-      "width": 1400,
-      "height": 939
-    }
-  },
-  {
-    "slug": "alan-price",
-    "name": "Dr. Alan Price",
-    "role": "Director, Northside Clinic",
-    "quote": "They built nine floors next to a working hospital and we never closed a ward, not for an hour.",
-    "project": "Northside Clinic",
-    "result": "0 days of ward closure",
-    "rating": 5,
-    "portrait": {
-      "src": "https://framerusercontent.com/images/LJDpTANmIf6hVsOakO2Jsv8Q8jk.webp",
-      "width": 886,
-      "height": 1100
-    },
-    "projectPhoto": {
-      "src": "https://framerusercontent.com/images/FMcKNefSqobmP5fuTyFoM0nPMfk.webp",
-      "width": 2000,
-      "height": 1342
-    }
+    "portrait": null,
+    "projectPhoto": HOUSE_PHOTO
   }
 ];

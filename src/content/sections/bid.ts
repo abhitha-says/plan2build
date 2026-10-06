@@ -1,4 +1,4 @@
-/** Copy for the home page's "Request a bid" section (the reference's GdBid instance). */
+/** Copy for the home page's "Start your build plan" section. */
 export type BidContent = {
   eyebrow: string;
   /** `|` breaks a line, `*words*` ride the yellow beam. */
@@ -22,18 +22,19 @@ export type BidContent = {
 };
 
 export const bid: BidContent = {
-  eyebrow: '10 · Request a bid',
-  heading: 'Send us|*the drawings.*',
-  subCopy: 'A budget range in two working days. A fixed, itemised bid in ten.',
-  cardLabel: 'Bid request',
+  eyebrow: '10 · Start your build plan',
+  heading: 'Tell us about|*your house.*',
+  subCopy:
+    'Your plot, your area and roughly when you want to start. We come back with an indicative cost broken down by stage, and your first decisions.',
+  cardLabel: 'Build plan request',
   cardNote: 'Takes one minute',
-  step1: 'What are you building?',
+  step1: 'What do you need help with?',
   step2: 'When do you want to start?',
-  startOptions: 'This quarter; In 3–6 months; Next year; Just pricing',
-  step3: 'The drawings',
-  dropText: 'Drop drawings here or bring them to the meeting',
-  dropHint: 'Plans, sketches or photos of the site',
-  button: 'Request a bid',
+  startOptions: 'Within 3 months; In 3–6 months; Later this year; Just exploring',
+  step3: 'Drawings or quotes',
+  dropText: 'Drop drawings or contractor quotes here',
+  dropHint: 'Plot papers, sketches, drawings or quotes',
+  button: 'Start your build plan',
   proofLine: '',
-  callLabel: 'Or call',
+  callLabel: 'Or talk to an expert',
 };

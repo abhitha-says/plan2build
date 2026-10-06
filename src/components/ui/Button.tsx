@@ -5,21 +5,27 @@ import { resolveHref } from '@/lib/routes';
 
 export type ButtonKind = 'solid' | 'ghost' | 'quiet';
 
-type FaceProps = { label: ReactNode; sub?: string };
+type FaceProps = {
+  label: ReactNode;
+  sub?: string;
+  /** SVG children (24-unit box) for the chip; it slides out and back in on hover. Default: the
+   * girder glyph that swaps for an arrow. */
+  glyph?: ReactNode;
+};
 
 /**
  * The inside of every button: a square chip whose girder glyph swaps for an arrow on hover,
  * and a label that a yellow fill rises behind.
  */
-export function ButtonFace({ label, sub }: FaceProps) {
+export function ButtonFace({ label, sub, glyph }: FaceProps) {
   return (
     <span className="gd-face">
       <span className="gd-chip" aria-hidden="true">
         <svg className="gd-g1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M5 5h14M5 19h14M12 5v14" />
+          {glyph ?? <path d="M5 5h14M5 19h14M12 5v14" />}
         </svg>
         <svg className="gd-g2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M5 12h14M13 5l7 7-7 7" />
+          {glyph ?? <path d="M5 12h14M13 5l7 7-7 7" />}
         </svg>
       </span>
       <span className="gd-lbl">
@@ -43,7 +49,7 @@ type ButtonProps = FaceProps & {
   style?: CSSProperties;
 };
 
-export function Button({ href, label, sub, kind = 'solid', className, ariaLabel, cursor = 'go', style }: ButtonProps) {
+export function Button({ href, label, sub, glyph, kind = 'solid', className, ariaLabel, cursor = 'go', style }: ButtonProps) {
   const target = resolveHref(href);
   const shared = {
     className: cx('gd-btn', `gd-${kind}`, sub && 'gd-two', className),
@@ -52,7 +58,7 @@ export function Button({ href, label, sub, kind = 'solid', className, ariaLabel,
     'aria-label': ariaLabel,
     style,
   };
-  const face = <ButtonFace label={label} sub={sub} />;
+  const face = <ButtonFace label={label} sub={sub} glyph={glyph} />;
 
   if (/^https?:\/\//.test(target)) {
     return (

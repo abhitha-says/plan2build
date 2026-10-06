@@ -26,7 +26,8 @@ const order = (index: number): StyleWithVars => ({ '--i': index });
 /** Full-screen menu under 1100px: numbered links, the two newest projects, bid and call. */
 export function Sheet({ ref, open, copy, projects, bidHref, phone, phoneHref, isActive }: SheetProps) {
   const tabIndex = open ? 0 : -1;
-  const links = [{ label: copy.homeLabel, href: '/' }, ...copy.links].filter((link) => link.label);
+  const hasHome = copy.links.some((link) => link.href === '/');
+  const links = (hasHome ? copy.links : [{ label: copy.homeLabel, href: '/' }, ...copy.links]).filter((link) => link.label);
   return (
     <div
       ref={ref}

@@ -1,4 +1,4 @@
-/** Content model for the site, as captured from the reference CMS. */
+/** Content model for the site. */
 
 export type Photo = { src: string; width: number | null; height: number | null };
 
@@ -26,19 +26,19 @@ export type Service = {
   /** One-line description shown in lists. */
   line: string;
   includes: string[];
-  /** Starting price, e.g. "$2M". */
+  /** Starting fee, e.g. "₹4,999" or "Free". */
   from: string;
   timeline: string;
   detail: string;
   steps: string[];
   /** Markdown. */
   body: string;
-  /** "96%:delivered on or before the date". */
+  /** "67:decisions with a decide-by date". */
   stat: { value: string; label: string } | null;
   photo: Photo | null;
 };
 
-export type ProjectStatus = 'On site' | 'Topped out' | 'Handed over';
+export type ProjectStatus = 'Sample plan' | 'On site' | 'Topped out' | 'Handed over';
 
 export type Project = {
   slug: string;
@@ -47,7 +47,7 @@ export type Project = {
   type: string;
   floors: number;
   bays: number;
-  /** Contract value, e.g. "$48.6M". */
+  /** Cost or contract value, e.g. "₹52.3–64.4 L". */
   value: string;
   daysOnSite: number;
   status: ProjectStatus;

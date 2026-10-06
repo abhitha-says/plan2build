@@ -1,4 +1,8 @@
-/** Copy for "08 · A rough budget", the estimate sheet on `/` and `/services`. Job types come from `services`. */
+/**
+ * Copy for "08 · Home Cost Check", the estimate sheet on `/` and `/services`. Rates are the
+ * Raipur rate card: Standard ₹1,520–1,800, Premium ₹1,950–2,400, Luxury ₹2,650–3,600 per sq ft,
+ * 1.2% more per extra floor; time to build ≈ 12 + area / 700 + 1.6 per extra floor, in months.
+ */
 
 export type BudgetContent = {
   eyebrow: string;
@@ -15,9 +19,11 @@ export type BudgetContent = {
   finishLabel: string;
   /** `Name:price factor; …` */
   finishes: string;
+  /** The choices for the first question, separated by `;`. Each one's rate line is keyed by its slug. */
+  types: string;
   /**
-   * One per service: `slug:price per unit:smallest size:largest size:base weeks:weeks pace; …`.
-   * Weeks = base + pace × √size.
+   * One per type: `slug:price per unit:smallest size:largest size:base:pace; …`.
+   * Duration (in the unit `weeksText` names) = base + pace × √size.
    */
   rates: string;
   /** Plus and minus around the estimate, in percent (0–45). */
@@ -34,25 +40,26 @@ export type BudgetContent = {
 };
 
 export const budget: BudgetContent = {
-  eyebrow: '08 · A rough budget',
-  heading: 'Know the number|*before the meeting.*',
-  subCopy: 'Three answers give you a range and a schedule. A fixed bid takes ten working days.',
-  factNumber: '10',
-  factLabel: 'working days to a fixed, itemised bid',
-  cardTitle: 'Estimate sheet',
-  typeLabel: 'Job type',
-  sizeLabel: 'Size',
+  eyebrow: '08 · Home Cost Check',
+  heading: 'Know the cost|*before the quotes.*',
+  subCopy: 'Three answers give you a likely range and the time to build. Free, with no sign-up.',
+  factNumber: '₹0',
+  factLabel: 'to find out what your house should cost',
+  cardTitle: 'Home Cost Check',
+  typeLabel: 'Floors',
+  types: 'Ground only; Ground + 1; Ground + 2; Ground + 3',
+  sizeLabel: 'Built-up area',
   unitLabel: 'sq ft',
   finishLabel: 'Finish level',
-  finishes: 'Standard:1; High:1.25; Premium:1.6',
+  finishes: 'Standard:1; Premium:1.31; Luxury:1.88',
   rates:
-    'construction:310:5000:200000:6:0.18; renovation:180:400:20000:3:0.14; roofing:14:1000:60000:0.5:0.02; design-build:340:2000:80000:14:0.2; fit-out:140:1000:60000:4:0.09',
-  spread: 12,
-  resultLabel: 'Rough budget',
-  scheduleLabel: 'Schedule',
-  weeksText: 'about {n} weeks',
+    'ground-only:1660:500:8000:8.85:0.135; ground-1:1680:500:8000:10.45:0.135; ground-2:1700:500:8000:12.05:0.135; ground-3:1720:500:8000:13.65:0.135',
+  spread: 10,
+  resultLabel: 'Likely cost',
+  scheduleLabel: 'Time to build',
+  weeksText: 'about {n} months',
   lowLabel: 'Low',
   highLabel: 'High',
-  note: 'Rough range from our last 40 jobs',
-  cta: 'Get a fixed bid',
+  note: 'Indicative for Raipur, excluding land and approvals',
+  cta: 'Start your build plan',
 };

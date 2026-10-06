@@ -1,117 +1,109 @@
 import type { TeamMember } from './types';
 
-/** Captured from the reference site's CMS. */
+/**
+ * The roles on the family's side of a Plan2Build project. Each badge is a role, not a named
+ * person, drawn as an icon; swap in names, photos and contact details once the team is public.
+ */
 
 export const team: TeamMember[] = [
   {
-    "slug": "marcus-hill",
-    "name": "Marcus Hill",
-    "role": "Founder & general contractor",
-    "years": 24,
+    "slug": "advisor",
+    "name": "Advisor",
+    "role": "Your Plan2Build build advisor",
+    "years": 0,
     "certs": [
-      "OSHA 30",
-      "LEED AP"
+      "Plan2Build staff",
+      "Writes your Build Plan"
     ],
-    "quote": "If the date slips, I call you before you call me.",
-    "phone": "+1 (312) 555-0164",
-    "email": "marcus@girder.build",
-    "badge": "001",
-    "bio": "## Background\nMarcus started as a carpenter's apprentice at 19 and founded Girder twelve years later with one truck and one rule: the date in the contract is a promise.\n\n## On site\nHe still walks every job once a week and signs every bid himself.",
-    "projects": [
-      "lakeview-residences",
-      "linden-kitchen"
-    ],
+    "quote": "Writes your house down before anyone quotes on it, so every number means the same thing.",
+    "phone": "",
+    "email": "",
+    "badge": "01",
+    "bio": "## The role\nWrites the Build Plan: cost estimate, specifications, BOQ, payment schedule, cash-flow plan and decisions calendar.\n\n## During the build\nRecords every change and decision, and is the person you call.",
+    "projects": [],
     "languages": [
       "English",
-      "Spanish"
+      "Hindi"
     ],
     "photo": {
-      "src": "https://framerusercontent.com/images/kl6Ux1kp4QoJoTGqPZxZ2GdyQ.webp",
-      "width": 1128,
-      "height": 1400
+      "src": "/images/roles/advisor.svg",
+      "width": 400,
+      "height": 500
     }
   },
   {
-    "slug": "lena-park",
-    "name": "Lena Park",
-    "role": "Head of preconstruction",
-    "years": 13,
+    "slug": "engineer",
+    "name": "Engineer",
+    "role": "Registered structural engineer",
+    "years": 0,
     "certs": [
-      "PE",
-      "CPE"
+      "Retained by Plan2Build",
+      "Signs off structure"
     ],
-    "quote": "A good estimate has no surprises in it, only numbers.",
-    "phone": "+1 (312) 555-0171",
-    "email": "lena@girder.build",
-    "badge": "014",
-    "bio": "## Background\nLena is a structural engineer who moved from design to building because she wanted to price what she drew.\n\n## On site\nShe leads estimating and every design-build job, and her bids are known for having no surprises in them.",
-    "projects": [
-      "northside-clinic",
-      "cedar-house"
-    ],
+    "quote": "Specifies your foundation, columns, beams and slabs. No brand can ever be attached to a structural item.",
+    "phone": "",
+    "email": "",
+    "badge": "02",
+    "bio": "## The role\nReviews and signs off every structural item in your Build Plan.\n\n## Independence\nRetained by Plan2Build. Never quotes to you, and is never paid by a contractor or a brand.",
+    "projects": [],
     "languages": [
       "English",
-      "Korean"
+      "Hindi"
     ],
     "photo": {
-      "src": "https://framerusercontent.com/images/EGeDqs1MsryMGMAxoJ1Y3apbWg.webp",
-      "width": 1128,
-      "height": 1400
+      "src": "/images/roles/engineer.svg",
+      "width": 400,
+      "height": 500
     }
   },
   {
-    "slug": "ray-kowalski",
-    "name": "Ray Kowalski",
-    "role": "Site superintendent",
-    "years": 31,
+    "slug": "auditor",
+    "name": "Auditor",
+    "role": "Independent site inspector",
+    "years": 0,
     "certs": [
-      "OSHA 500",
-      "First aid"
+      "Paid per inspection",
+      "Blind to the supplier"
     ],
-    "quote": "Everybody on my site goes home the way they came in.",
-    "phone": "+1 (312) 555-0188",
-    "email": "ray@girder.build",
-    "badge": "003",
-    "bio": "## Background\nRay has run sites for thirty-one years, from houses to twenty-storey towers.\n\n## On site\nHe opens the gate at six, runs the daily briefing and has not had a lost-time injury on his sites since 2019.",
-    "projects": [
-      "harbor-yard-tower",
-      "depot-9"
-    ],
+    "quote": "Checks each stage before it is covered up, without being told who supplied the material.",
+    "phone": "",
+    "email": "",
+    "badge": "03",
+    "bio": "## The role\nInspects your house at the six gates, with time- and location-stamped photos that cannot be backdated.\n\n## Independence\nKept separate from contractors and local business partners.",
+    "projects": [],
     "languages": [
       "English",
-      "Polish"
+      "Hindi"
     ],
     "photo": {
-      "src": "https://framerusercontent.com/images/RtwNEFNo0oU4Ys75C18215Eork.webp",
-      "width": 1128,
-      "height": 1400
+      "src": "/images/roles/auditor.svg",
+      "width": 400,
+      "height": 500
     }
   },
   {
-    "slug": "andre-cole",
-    "name": "Andre Cole",
-    "role": "Roofing & envelope lead",
-    "years": 11,
+    "slug": "operations",
+    "name": "Operations",
+    "role": "Plan2Build operations team",
+    "years": 0,
     "certs": [
-      "GAF Master Elite",
-      "OSHA 30"
+      "Approves every report",
+      "Handles exceptions"
     ],
-    "quote": "Water always finds the one detail you skipped. So we skip none.",
-    "phone": "+1 (312) 555-0193",
-    "email": "andre@girder.build",
-    "badge": "027",
-    "bio": "## Background\nAndre learned roofing from his father and holds the manufacturer's top installer rating.\n\n## On site\nHe leads every roof and every building envelope, and tests each one with water before the scaffold comes down.",
-    "projects": [
-      "foundry-lofts",
-      "maple-court-roof"
-    ],
+    "quote": "Watches for overdue decisions, open defects and stages behind plan, and steps in before they cost you.",
+    "phone": "",
+    "email": "",
+    "badge": "04",
+    "bio": "## The role\nAssigns inspections, approves every report before you see it, and leads the discussion when you and your contractor disagree.",
+    "projects": [],
     "languages": [
-      "English"
+      "English",
+      "Hindi"
     ],
     "photo": {
-      "src": "https://framerusercontent.com/images/yaUFdfA4ZLqnOoJqQP0brlVDJYQ.webp",
-      "width": 1128,
-      "height": 1400
+      "src": "/images/roles/operations.svg",
+      "width": 400,
+      "height": 500
     }
   }
 ];

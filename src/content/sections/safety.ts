@@ -1,4 +1,4 @@
-/** Copy for the home page's "Safety & quality" elevation drawing. */
+/** Copy for the home page's "Independent checks" elevation drawing: the six inspection gates. */
 
 export type SafetyCheck = { title: string; text: string };
 
@@ -19,16 +19,16 @@ export type SafetyContent = {
 };
 
 export const safety: SafetyContent = {
-  eyebrow: '05 · Safety & quality',
-  heading: 'Checked at|*every level.*',
+  eyebrow: '05 · Independent checks',
+  heading: 'Checked before|*it is covered up.*',
   checks: [
-    { title: 'Foundations', text: 'Every pour is cube-tested and logged before the next one.' },
-    { title: 'Structure', text: 'A third-party engineer signs off each floor.' },
-    { title: 'Envelope', text: 'Every window is hose-tested for leaks before the scaffold comes down.' },
-    { title: 'Roof', text: 'Flood-tested for 24 hours, then warrantied for 30 years.' },
-    { title: 'People', text: 'Daily briefing, tied-off above six feet, no exceptions.' },
+    { title: 'Foundation & plinth', text: 'Gates 1 and 2: the footings before the pour, then the plinth beam.' },
+    { title: 'Every slab', text: 'Gate 3: steel, cover and shuttering checked before each slab is poured.' },
+    { title: 'Before plaster', text: 'Gate 4: concealed wiring and plumbing photographed before the walls close.' },
+    { title: 'Waterproofing', text: 'Gate 5: terrace and bathrooms ponding-tested before the tiles go on.' },
+    { title: 'Final snag', text: 'Gate 6: every defect closed with proof before the last payment falls due.' },
   ],
   checkWord: 'Check',
-  certLabel: 'Audited every year',
-  certs: ['OSHA VPP Star', 'EMR 0.62', 'ISO 9001'],
+  certLabel: 'Our inspection rules',
+  certs: ['Blind to the supplier', 'Time-stamped evidence', 'Capped structural remedy'],
 };

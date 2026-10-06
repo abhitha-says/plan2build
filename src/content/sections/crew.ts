@@ -1,4 +1,4 @@
-/** Copy for the home page's crew section ("06 · The crew"). Badges come from `team`. */
+/** Copy for the home page's crew section ("06 · On your side"). Badges come from `team`. */
 export type CrewContent = {
   eyebrow: string;
   /** `|` breaks a line, `*words*` ride the yellow beam. */
@@ -7,23 +7,23 @@ export type CrewContent = {
   /** Team button label; empty hides the button. */
   allLabel: string;
   allLink: string;
-  /** Printed after the site name at the top of every badge ("Girder · Site ID"). */
+  /** Printed after the site name at the top of every badge ("Plan2Build · Role"). */
   idLabel: string;
   yearsWord: string;
   badgeWord: string;
-  /** Profile button, followed by the member's first name ("Meet Marcus"). */
+  /** Profile button, followed by the member's first name ("Meet Marcus"). Empty = no button. */
   meetWord: string;
 };
 
 export const crew: CrewContent = {
-  eyebrow: '06 · The crew',
-  heading: 'The people|*on your site.*',
+  eyebrow: '06 · On your side',
+  heading: 'The people|*on your side.*',
   subCopy:
-    'The names on the bid are the names on the job. Same superintendent from the first stake to the last walkthrough, and every one of them picks up the phone.',
-  allLabel: 'Meet the team',
-  allLink: '/team',
-  idLabel: 'Site ID',
+    'Nobody here works for your contractor or for a brand. Each role answers to your family and to the plan.',
+  allLabel: '',
+  allLink: '/about',
+  idLabel: 'Role',
   yearsWord: 'yrs',
-  badgeWord: 'Badge',
-  meetWord: 'Meet',
+  badgeWord: 'Role',
+  meetWord: '',
 };

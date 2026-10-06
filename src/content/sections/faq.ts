@@ -18,8 +18,8 @@ export type FaqContent = {
 export const faq: FaqContent = {
   eyebrow: '09 · Questions',
   heading: 'Ask before|*you sign.*',
-  subCopy: 'Something else? Call {phone} or email {email}. We answer the same day.',
-  callLabel: 'Call us',
+  subCopy: 'Something else? Call {phone} or email {email}.',
+  callLabel: 'Talk to an expert',
   showTabs: true,
   allLabel: 'All',
   tagLetter: 'Q',

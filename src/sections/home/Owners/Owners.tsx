@@ -2,7 +2,7 @@ import { reviews } from '@/content/reviews';
 import type { OwnersContent } from '@/content/sections/owners';
 import { OwnersSection } from './OwnersSection';
 
-/** "Owners' words": the review carousel with its handover sheet. */
+/** "Three quotes, one house": the quote carousel with its audit sheet. */
 export function Owners({ content }: { content: OwnersContent }) {
   return <OwnersSection content={content} reviews={reviews} />;
 }

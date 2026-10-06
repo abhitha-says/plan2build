@@ -192,7 +192,7 @@ export function OwnersSection({ content, reviews }: OwnersProps) {
               >
                 {items.map((review, index) => (
                   <figure key={review.slug || index} className="owners-slide">
-                    <Stars rating={review.rating} />
+                    {content.showRating && <Stars rating={review.rating} />}
                     <blockquote className="owners-quote">
                       <p>{review.quote}</p>
                     </blockquote>
@@ -216,7 +216,7 @@ export function OwnersSection({ content, reviews }: OwnersProps) {
                       className={cx('owners-q', index === current && 'is-on')}
                       aria-hidden={index !== current || undefined}
                     >
-                      <Stars rating={review.rating} />
+                      {content.showRating && <Stars rating={review.rating} />}
                       <blockquote className="owners-quote">
                         <p>{review.quote}</p>
                       </blockquote>
@@ -261,7 +261,9 @@ function Stars({ rating }: { rating: number }) {
 function Reviewer({ review }: { review: Review }) {
   return (
     <figcaption className="owners-who">
-      <img {...framerPhoto(review.portrait, '56px')} alt={review.name} loading="lazy" decoding="async" draggable={false} />
+      {review.portrait && (
+        <img {...framerPhoto(review.portrait, '56px')} alt={review.name} loading="lazy" decoding="async" draggable={false} />
+      )}
       <span>
         <b>{review.name}</b>
         <small>{review.role}</small>

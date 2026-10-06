@@ -5,7 +5,9 @@ export type NavLink = { label: string; href: string };
 export type HeaderContent = {
   /** Main navigation, in order. Hrefs are the reference's paths; the header resolves them. */
   links: NavLink[];
-  /** The nav link whose button opens the projects drawer instead of navigating. */
+  /** Small caps line under the wordmark. */
+  logoTag: string;
+  /** The nav link whose button opens the projects drawer instead of navigating. Empty = no drawer. */
   drawerFor: string;
   ctaLabel: string;
   showCta: boolean;
@@ -28,28 +30,29 @@ export type HeaderContent = {
 
 export const header: HeaderContent = {
   links: [
-    { label: 'Projects', href: '/projects' },
-    { label: 'Services', href: '/services' },
-    { label: 'Safety', href: '/safety' },
+    { label: 'Home', href: '/' },
+    { label: 'How it works', href: '/#how-it-works' },
+    { label: 'For homeowners', href: '/for-homeowners' },
+    { label: 'For contractors', href: '/for-contractors' },
     { label: 'About', href: '/about' },
-    { label: 'Careers', href: '/careers' },
   ],
-  drawerFor: 'Projects',
-  ctaLabel: 'Request a bid',
+  logoTag: 'Plan Compare Build Verify',
+  drawerFor: '',
+  ctaLabel: 'Get your build plan',
   showCta: true,
   showPhone: true,
-  drawerTitle: 'Built by Girder',
-  allLabel: 'All projects',
-  servicesTitle: 'What we build',
+  drawerTitle: 'Sample build plans',
+  allLabel: 'All sample plans',
+  servicesTitle: 'What we do',
   servicesLabel: 'All services',
   servicesLink: '/services',
-  cardKicker: 'Got drawings?',
-  cardTitle: 'Budget range in 2 working days',
-  cardLine: 'Send the drawings. A fixed, itemised bid follows in ten.',
-  cardButton: 'Request a bid',
+  cardKicker: 'Holding a quote?',
+  cardTitle: 'Quote Review from ₹4,999',
+  cardLine: 'Know what is included, missing and unclear before you sign.',
+  cardButton: 'Start your build plan',
   homeLabel: 'Home',
-  newestLabel: 'Latest projects',
-  callLabel: 'Call the office',
+  newestLabel: 'Sample plans',
+  callLabel: 'Talk to an expert',
   menuLabel: 'Menu',
   closeLabel: 'Close',
 };

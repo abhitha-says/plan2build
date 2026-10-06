@@ -51,7 +51,7 @@ function LinkColumn({ column, index }: { column: FooterColumn; index: number }) 
  * legal line. The page above lifts off it (LiftReveal).
  */
 export function Footer() {
-  const name = site.name || 'Girder';
+  const name = site.name || 'Plan2Build';
   const columns = footer.columns.filter((column) => column.links.length);
   const letters = Array.from(name.toUpperCase()).filter((letter) => letter.trim());
   const legal = footer.legal.replace('{year}', String(new Date().getFullYear())).replace('{name}', name);

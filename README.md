@@ -1,8 +1,10 @@
-# Girder
+# Plan2Build
 
-Next.js rebuild of the Girder contractor site (originally a Framer site), covering the home page
-(`/`) and the services page (`/services`). No Framer code, runtime or API is used; photos are the
-only remote resources (Framer's image CDN, `framerusercontent.com`).
+Marketing site for Plan2Build: independent advice for the family building one house (Build Plan,
+quotes compared on equal scope, independent stage inspections). Pilot city: Raipur. Built on the
+Girder Next.js template; it covers the home page (`/`) and the services page (`/services`).
+Product facts and figures come from the system blueprint (`SYSTEM_BLUEPRINT`); a few photos are
+still served from Framer's image CDN (`framerusercontent.com`).
 
 ```bash
 npm install
@@ -23,10 +25,12 @@ src/
     layout/            Header, Footer (+ lift reveal), Loader, PageTransition (hoist), SmoothScroll
     ui/                Section shell, Button, Eyebrow, Heading
   sections/
-    home/              Hero, Board, Built, Safety, Crew, Owners, Bid
+    home/              Hero, Board (plan facts), Built (sample plans), Safety (inspection gates),
+                       Crew (roles), Owners (quote comparison), Bid (start your build plan)
     services/          PageHero
-    shared/            Trades, Schedule, Budget, Faq (used on both pages)
-  content/             CMS data (site, services, projects, team, reviews, faq) + per-section copy
+    shared/            Trades (services), Schedule (16 stages), Budget (Home Cost Check), Faq
+  content/             site, services, projects (sample houses), team (roles), reviews (the three
+                       quotes demo), faq + per-section copy
   hooks/               useReveal, useScrollProgress, useMagnetic, useSectionWidth, ...
   lib/                 frame ticker, text parsing, images, routes, typography, smooth scroll
   styles/              fonts.css, kit.css (styles shared by every section)

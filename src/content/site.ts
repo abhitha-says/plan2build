@@ -1,17 +1,17 @@
 import type { SiteInfo } from './types';
 
-/** Captured from the reference site's CMS. */
+/** Plan2Build's contact details and the lines repeated across the site. */
 
 export const site: SiteInfo = {
-  "name": "Girder",
-  "descriptor": "Contractor & builder",
-  "tagline": "Construction, renovation and roofing for owners who want the date and the budget kept. One crew, one contract, from groundworks to handover.",
-  "email": "bids@girder.build",
-  "phone": "+1 (312) 555-0164",
+  "name": "Plan2Build",
+  "descriptor": "Home construction platform",
+  "tagline": "Independent advice for the family building one house: a written Build Plan, quotes compared on equal scope, and independent checks at the six stages that cannot be undone. We never take your contract.",
+  "email": "hello@plan2build.in",
+  "phone": "+91 98765 43210",
   "bidHref": "/request-a-bid",
   "projectsHref": "/projects",
-  "area": "Chicago & the North Shore",
-  "proof": "412 projects handed over · 96% on time · 1.2M hours without a lost-time injury",
+  "area": "Raipur",
+  "proof": "67 decisions · 16 stages · 6 independent inspections · 1 permanent build record",
   "socials": [
     {
       "label": "LinkedIn",
@@ -26,13 +26,13 @@ export const site: SiteInfo = {
       "href": "https://youtube.com"
     }
   ],
-  "projectsBuilt": 412,
-  "licence": "Licensed general contractor · IL #104-016782",
-  "office": "1200 W Fulton Market, Chicago, IL 60607",
-  "hours": "Mon–Fri 7:00–17:00",
+  "projectsBuilt": 0,
+  "licence": "ConjunIQ Technologies Private Limited",
+  "office": "Raipur, Chhattisgarh",
+  "hours": "Mon–Sat 9:00 AM–6:00 PM",
   "photo": {
-    "src": "https://framerusercontent.com/images/JoNU9XW0jqY27exjdfoTfAOM.webp",
-    "width": 2000,
-    "height": 1342
+    "src": "/images/house-blueprint.webp",
+    "width": 1536,
+    "height": 1024
   }
 };

@@ -1,10 +1,10 @@
-/** Copy for "04 · How a job runs", the Gantt schedule shown on `/` and `/services`. */
+/** Copy for "04 · How a house gets built", the stage chart on `/` and `/services`. Units are months. */
 
 export type SchedulePhase = {
   name: string;
-  /** First week of the phase. */
+  /** First month of the phase. */
   start: number;
-  /** Week the phase ends (its milestone). */
+  /** Month the phase ends (its milestone). */
   end: number;
   text: string;
 };
@@ -14,31 +14,31 @@ export type ScheduleContent = {
   /** `|` breaks a line, `*words*` ride the ink beam. */
   heading: string;
   subCopy: string;
-  /** Up to 8 phases; the chart length follows the last end week. */
+  /** Up to 8 phases; the chart length follows the last end month. */
   phases: SchedulePhase[];
   weekLabel: string;
   todayLabel: string;
   weeksWord: string;
   phaseWord: string;
-  /** Shown on the dimension line under the chart after the total weeks. */
+  /** Shown on the dimension line under the chart after the total months. */
   note: string;
 };
 
 export const schedule: ScheduleContent = {
-  eyebrow: '04 · How a job runs',
-  heading: 'A schedule you can|*hold us to.*',
+  eyebrow: '04 · How a house gets built',
+  heading: 'Sixteen stages,|*one plan.*',
   subCopy:
-    'Every job gets a week-by-week schedule before we break ground. You see it, we report against it every Friday, and the handover date goes in the contract.',
+    'The 16 construction stages fall into five phases. Your workspace tracks each one with planned and actual dates, and every decision comes up before the stage that needs it.',
   phases: [
-    { name: 'Preconstruction', start: 0, end: 8, text: 'Drawings, permits and a fixed, itemised price.' },
-    { name: 'Groundworks', start: 6, end: 14, text: 'Excavation, foundations and services in the ground.' },
-    { name: 'Structure', start: 12, end: 26, text: 'Steel and concrete frame, floor by floor.' },
-    { name: 'Envelope & roof', start: 22, end: 32, text: 'Walls, glazing and a watertight roof.' },
-    { name: 'Fit-out & handover', start: 28, end: 40, text: 'Interiors, inspections, punch list, keys.' },
+    { name: 'Plan', start: 0, end: 3, text: 'Build Plan, drawings, approvals and quotes compared on equal scope.' },
+    { name: 'Foundation', start: 3, end: 6, text: 'Excavation, footings and the plinth beam. Gates 1 and 2.' },
+    { name: 'Structure', start: 5, end: 11, text: 'Columns, beams, slabs, walls, roof and staircase. Gate 3 before every slab pour.' },
+    { name: 'Services & finishes', start: 10, end: 18, text: 'Wiring, plumbing and waterproofing, then plaster, doors, windows, floors and paint. Gates 4 and 5.' },
+    { name: 'Handover', start: 17, end: 20, text: 'External works, the final snag check (Gate 6) and your permanent build record.' },
   ],
-  weekLabel: 'Wk',
+  weekLabel: 'Month',
   todayLabel: 'Today',
-  weeksWord: 'Weeks',
+  weeksWord: 'Months',
   phaseWord: 'Phase',
-  note: 'Permit to keys',
+  note: 'Plan to handover · 2,650 sq ft, G+1 · indicative',
 };

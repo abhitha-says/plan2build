@@ -1,4 +1,4 @@
-/** Copy for the home page's "By the numbers" site board. The ticker lists handed-over projects. */
+/** Copy for the home page's "What you get" site board. The ticker lists the sample build plans. */
 
 export type BoardStat = { value: string; label: string };
 
@@ -22,19 +22,20 @@ export type BoardContent = {
 };
 
 export const board: BoardContent = {
-  eyebrow: '01 · By the numbers',
-  heading: 'The date and the budget,|*kept.*',
-  subCopy: 'Counted from our own job files and checked every quarter. Nothing rounded up.',
+  eyebrow: '01 · What you get',
+  heading: 'Every decision,|*written down.*',
+  subCopy:
+    'A house is 16 stages and 67 material and system decisions. Your Build Plan gives each one a decide-by date, before the money is spent.',
   boardTitle: '',
-  boardNote: 'Updated every morning at 6:00',
+  boardNote: 'Pilot city · Raipur',
   stats: [
-    { value: '412', label: 'projects handed over' },
-    { value: '96%', label: 'delivered on or before the date' },
-    { value: '1,204', label: 'days without a lost-time injury' },
-    { value: '$0', label: 'average overrun on fixed-price bids' },
+    { value: '67', label: 'decisions, each with a decide-by date' },
+    { value: '16', label: 'construction stages tracked' },
+    { value: '6', label: 'independent inspection gates' },
+    { value: '₹0', label: 'paid by brands for a place in your plan' },
   ],
-  yellowCell: 3,
+  yellowCell: 1,
   showTicker: true,
-  daysWord: 'days',
+  daysWord: 'months',
   tickerSpeed: 60,
 };

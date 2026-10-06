@@ -11,9 +11,9 @@ import { Schedule } from '@/sections/shared/Schedule/Schedule';
 import { Trades } from '@/sections/shared/Trades/Trades';
 
 export const metadata = pageMetadata({
-  title: 'Construction, renovation, roofing, design-build and fit-out — Girder, contractor & builder',
+  title: 'Services — Plan2Build: cost check, quote review, Build Plan and independent inspections',
   description:
-    'One general contractor for construction, renovation, roofing, design-build and fit-out, with a fixed price and a schedule you see every Friday.',
+    'A free home cost check, independent review and comparison of contractor quotes, a Complete Build Plan, and independent inspections at the six stages that cannot be undone. We never take your contract.',
   path: '/services',
 });
 

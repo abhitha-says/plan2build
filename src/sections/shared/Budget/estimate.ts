@@ -24,7 +24,7 @@ export type Estimate = {
   /** Where the low and high ticks sit along the tape, 0–1. */
   tapeLow: number;
   tapeHigh: number;
-  /** Budget range in dollars. */
+  /** Budget range in rupees. */
   low: number;
   high: number;
   weeks: number;
@@ -132,12 +132,15 @@ export const formatCount = (value: number) =>
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-/** "$6.8M" (whole millions from $20M up), "$180K", "$950". Negative values read as $0. */
+/**
+ * Indian units: "₹1.29 Cr" from one crore, "₹58.3 L" from one lakh (whole lakhs from ₹20 L up),
+ * "₹95,000" below that. Negative values read as ₹0.
+ */
 export function formatMoney(value: number): string {
   const amount = Math.max(0, value);
-  if (amount >= 1e6) return `$${(amount / 1e6).toFixed(amount >= 2e7 ? 0 : 1)}M`;
-  if (amount >= 1e3) return `$${Math.round(amount / 1e3)}K`;
-  return `$${Math.round(amount)}`;
+  if (amount >= 1e7) return `₹${(amount / 1e7).toFixed(2)} Cr`;
+  if (amount >= 1e5) return `₹${(amount / 1e5).toFixed(amount >= 2e6 ? 0 : 1)} L`;
+  return `₹${Math.round(amount).toLocaleString('en-IN')}`;
 }
 
 /** The bid page link with the three answers added, as the reference built it. */

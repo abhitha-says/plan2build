@@ -200,12 +200,14 @@ function MemberActions({ member, first, meetWord }: MemberActionsProps) {
           {member.email && <a href={`mailto:${member.email}`}>{member.email}</a>}
         </p>
       )}
-      <Button
-        href={`/team/${member.slug}`}
-        label={`${meetWord} ${first}`.trim()}
-        kind="quiet"
-        ariaLabel={`${meetWord} ${member.name}`}
-      />
+      {meetWord.trim() && (
+        <Button
+          href={`/team/${member.slug}`}
+          label={`${meetWord} ${first}`.trim()}
+          kind="quiet"
+          ariaLabel={`${meetWord} ${member.name}`}
+        />
+      )}
     </>
   );
 }

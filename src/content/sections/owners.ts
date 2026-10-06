@@ -1,4 +1,4 @@
-/** Copy for the home page's reviews section ("07 · Owners' words"). Reviews come from `reviews`. */
+/** Copy for the home page's quote comparison ("07 · Three quotes, one house"). The quotes come from `reviews`. */
 export type OwnersContent = {
   eyebrow: string;
   /** `|` breaks a line, `*words*` ride the yellow beam. */
@@ -12,18 +12,21 @@ export type OwnersContent = {
   resultLabel: string;
   /** Pressed onto the sheet on hover; empty = no stamp. */
   stampText: string;
+  /** The five-square rating above each quote. */
+  showRating: boolean;
   prevLabel: string;
   nextLabel: string;
 };
 
 export const owners: OwnersContent = {
-  eyebrow: "07 · Owners' words",
-  heading: 'Signed off|*by owners.*',
-  checks: 'On the date; On the budget; Zero open defects; Site left clean',
-  cardLabel: 'Handover',
-  sheetLabel: 'Sheet',
-  resultLabel: 'Result',
-  stampText: 'Signed off',
-  prevLabel: 'Previous review',
-  nextLabel: 'Next review',
+  eyebrow: '07 · Three quotes, one house',
+  heading: 'The cheapest quote|*is rarely the cheapest house.*',
+  checks: 'Every line priced or excluded; Gaps against the specification; Rupee impact of each gap; Totals on equal scope',
+  cardLabel: 'Quote audit',
+  sheetLabel: 'Quote',
+  resultLabel: 'On equal scope',
+  stampText: 'Audited',
+  prevLabel: 'Previous quote',
+  nextLabel: 'Next quote',
+  showRating: false,
 };

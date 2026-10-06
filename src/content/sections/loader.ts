@@ -24,9 +24,9 @@ export const loader: LoaderCopy = {
   duration: 2.4,
   wordmark: '',
   place: '',
-  topLevel: 22,
-  tag: 'First lift',
-  statuses: ['Hook on', 'Lifting', 'Set down'],
-  counterLabel: 'Level',
+  topLevel: 16,
+  tag: 'Plan to build',
+  statuses: ['Plan', 'Compare', 'Build'],
+  counterLabel: 'Stage',
   skipLabel: 'Skip',
 };

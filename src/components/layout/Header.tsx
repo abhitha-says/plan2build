@@ -17,7 +17,7 @@ export function Header() {
   return (
     <SiteHeader
       copy={header}
-      siteName={site.name || 'Girder'}
+      siteName={site.name || 'Plan2Build'}
       phone={site.phone}
       phoneHref={site.phone ? telHref(site.phone) : '/contact'}
       bidHref={site.bidHref}

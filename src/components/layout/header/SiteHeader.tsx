@@ -1,8 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react';
 import { Button } from '@/components/ui/Button';
+import { ARROW_UP_RIGHT } from '@/components/ui/glyphs';
 import type { HeaderContent } from '@/content/sections/header';
 import { cx } from '@/lib/cx';
 import { getSmoothScroller } from '@/lib/smoothScroll';
@@ -10,7 +12,7 @@ import { TYPE } from '@/lib/typography';
 import './header.css';
 import type { HeaderProject, HeaderService } from './data';
 import { Drawer } from './Drawer';
-import { Caret, Mark } from './icons';
+import { Caret, Phone } from './icons';
 import { NavAnchor } from './NavAnchor';
 import { Sheet } from './Sheet';
 import { useHeaderScroll } from './useHeaderScroll';
@@ -234,8 +236,14 @@ export function SiteHeader({ copy, siteName, phone, phoneHref, bidHref, projects
       <div className="header-bar">
         <div className="header-in">
           <NavAnchor className="header-logo" href="/" aria-label={`${siteName} home`}>
-            <Mark />
-            <span style={TYPE.display}>{siteName}</span>
+            {/* Ink logo over light grounds, the white-lettered one over night. */}
+            <Image className="header-mk header-mk-lt" src="/images/plan2build-logo.png" alt="" width={480} height={111} preload />
+            <Image className="header-mk header-mk-dk" src="/images/plan2build-logo-dark.png" alt="" width={480} height={111} />
+            {copy.logoTag && (
+              <small className="header-tag" style={TYPE.mono}>
+                {copy.logoTag}
+              </small>
+            )}
           </NavAnchor>
           <nav className="header-nav" aria-label="Main">
             <ul>
@@ -276,12 +284,14 @@ export function SiteHeader({ copy, siteName, phone, phoneHref, bidHref, projects
           </nav>
           <div className="header-right">
             {copy.showPhone && phone && (
-              <a className="header-tel" href={phoneHref} style={TYPE.mono}>
-                <i aria-hidden="true" />
+              <a className="header-tel" href={phoneHref}>
+                <i aria-hidden="true">
+                  <Phone />
+                </i>
                 {phone}
               </a>
             )}
-            {copy.showCta && copy.ctaLabel && <Button href={bidHref} label={copy.ctaLabel} kind="quiet" className="header-cta" />}
+            {copy.showCta && copy.ctaLabel && <Button href={bidHref} label={copy.ctaLabel} kind="quiet" glyph={ARROW_UP_RIGHT} className="header-cta" />}
             <button
               ref={burgerRef}
               type="button"

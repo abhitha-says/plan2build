@@ -12,6 +12,8 @@ const SECTION_FOR_PATH: Array<[RegExp, string]> = [
   [/^\/services\/([\w-]+)$/, '/services#$1'],
   [/^\/safety$/, '/#safety'],
   [/^\/(team|about)(\/.*)?$/, '/#crew'],
+  [/^\/for-homeowners$/, '/#how-it-works'],
+  [/^\/for-contractors$/, '/#bid'],
   [/^\/(careers|journal|contact|privacy|terms|cookies)(\/.*)?$/, '#contact'],
 ];
 

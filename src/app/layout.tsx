@@ -15,9 +15,9 @@ import { SITE_URL, SHARE_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: 'Girder',
+  applicationName: 'Plan2Build',
   robots: { 'max-image-preview': 'large' },
-  openGraph: { type: 'website', siteName: 'Girder', images: [SHARE_IMAGE] },
+  openGraph: { type: 'website', siteName: 'Plan2Build', images: [SHARE_IMAGE] },
   twitter: { card: 'summary_large_image', images: [SHARE_IMAGE] },
 };
 

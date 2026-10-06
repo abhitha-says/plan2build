@@ -1,90 +1,110 @@
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
+import { ARROW_UP_RIGHT } from '@/components/ui/glyphs';
 import type { HeroContent } from '@/content/sections/hero';
-import { projects } from '@/content/projects';
-import { site } from '@/content/site';
-import type { StyleWithVars } from '@/lib/css';
-import { parseHeadline, plainHeadline, splitList } from '@/lib/text';
+import { parseHeadline, plainHeadline, pad2 } from '@/lib/text';
 import { TYPE } from '@/lib/typography';
-import { heroProjects } from './build';
-import { HeroScene } from './HeroScene';
 import './hero.css';
 
-const MAX_STAGES = 6;
+/** The headline runs one step heavier than the kit's display weight. */
+const HEADLINE = { ...TYPE.display, fontWeight: 900 };
 
 /**
- * Home page hero: a building site where a tower crane lifts floors onto a tower that builds
- * itself, the "Now building" card for that project, and the build-stage rail. The headline and
- * pitch are rendered here on the server; the animated site around them is HeroScene.
+ * Home page hero: the "Build with clarity" headline and pitch on the left, the half-built,
+ * half-drawn house on the right with its four labelled pointers, and the six-step rail along the
+ * bottom. Everything is server-rendered.
  */
 export function Hero({ content }: { content: HeroContent }) {
-  const descriptor = site.descriptor || 'Contractor & builder';
-  const area = site.area || 'Chicago';
-  const tagline = content.subCopy.trim() || site.tagline || 'Construction, renovation and roofing, built on the date and the budget we signed.';
-  const towers = heroProjects(projects);
-
-  const copy = (
-    <>
-      <p className="hero-eb" style={TYPE.mono}>
-        <span className="hero-live" aria-hidden="true" />
-        {content.eyebrow.trim() || (
-          <>
-            {descriptor}
-            {/* Phones show the descriptor alone. */}
-            <span className="hero-eb-area"> · {area}</span>
-          </>
-        )}
-      </p>
-      <h1 className="hero-h1" aria-label={plainHeadline(content.heading)} style={TYPE.display}>
-        {parseHeadline(content.heading).map((line, lineIndex) => (
-          <span key={lineIndex} className="hero-ln" aria-hidden="true">
-            {/* Lines rise 130ms apart; each line's beam drops in 120ms after the one above. */}
-            <span className="hero-lni" style={{ transitionDelay: `${200 + lineIndex * 130}ms` }}>
-              {line.map((word, wordIndex) =>
-                word.accent ? (
-                  <span key={wordIndex} className="hero-acc" style={{ '--sd': `${850 + lineIndex * 120}ms` } as StyleWithVars}>
-                    <span className="hero-beam" aria-hidden="true">
-                      <i />
-                      <i />
-                    </span>
-                    <span className="hero-acct">
-                      {word.text}
-                      {word.tail}
-                    </span>
-                  </span>
-                ) : (
-                  <span key={wordIndex}>
-                    {word.text}
-                    {word.tail}{' '}
-                  </span>
-                ),
-              )}
-            </span>
-          </span>
-        ))}
-      </h1>
-    </>
-  );
-
-  const pitch = (
-    <>
-      <p className="hero-sub">{tagline}</p>
-      <div className="hero-btns">
-        <Button href={site.bidHref || '/request-a-bid'} label={content.primary} kind="solid" />
-        <Button href={content.secondaryLink} label={content.secondary} kind="ghost" />
-      </div>
-    </>
-  );
+  const lines = parseHeadline(content.heading);
 
   return (
-    <HeroScene
-      copy={copy}
-      pitch={pitch}
-      projects={towers}
-      stages={splitList(content.stages).slice(0, MAX_STAGES)}
-      proof={site.proof}
-      topLabel={content.topLabel}
-      cursorLabel={content.cursorLabel}
-      autoBuild={content.autoBuild}
-    />
+    <section className="gd ph" aria-labelledby="ph-title">
+      <div className="ph-main">
+        <div className="ph-copy">
+          <p className="ph-eb ph-in" style={TYPE.mono}>
+            <i aria-hidden="true" />
+            {content.eyebrow}
+          </p>
+          <h1 id="ph-title" className="ph-h1" aria-label={plainHeadline(content.heading)} style={HEADLINE}>
+            {lines.map((line, lineIndex) => (
+              <span key={lineIndex} className="ph-ln" aria-hidden="true">
+                <span className="ph-lni" style={{ animationDelay: `${120 + lineIndex * 110}ms` }}>
+                  {line.map((word, wordIndex) =>
+                    word.accent ? (
+                      <span key={wordIndex} className="ph-acc">
+                        {word.text}
+                        {word.tail}
+                      </span>
+                    ) : (
+                      <span key={wordIndex}>
+                        {word.text}
+                        {word.tail}
+                        {wordIndex < line.length - 1 ? ' ' : ''}
+                      </span>
+                    ),
+                  )}
+                </span>
+              </span>
+            ))}
+          </h1>
+          <p className="ph-sub ph-in" style={TYPE.body}>
+            {content.subCopy}
+          </p>
+          <div className="ph-btns ph-in">
+            <Button href={content.primaryLink} label={content.primary} kind="solid" glyph={ARROW_UP_RIGHT} />
+            <Button href={content.secondaryLink} label={content.secondary} kind="ghost" glyph={ARROW_UP_RIGHT} className="ph-pro" />
+          </div>
+          <ul className="ph-stats ph-in">
+            {content.stats.map((stat) => (
+              <li key={stat.label}>
+                <b style={TYPE.display}>{stat.value}</b>
+                <span style={TYPE.mono}>{stat.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="ph-art">
+          <div className="ph-pic">
+            <Image
+              src="/images/hero-house.webp"
+              alt={content.imageAlt}
+              width={1536}
+              height={1024}
+              sizes="(max-width: 1099px) 100vw, 70vw"
+              preload
+            />
+            <ul className="ph-tags">
+              {content.callouts.map((callout) => (
+                <li key={callout.title} className="ph-tag">
+                  <i className="ph-tag-mk" aria-hidden="true" />
+                  <b>{callout.title}</b>
+                  {callout.lines.map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="ph-rail" id="how-it-works">
+        <ol className="ph-steps">
+          {content.steps.map((step, index) => (
+            <li key={step.title} style={{ animationDelay: `${700 + index * 70}ms` }}>
+              <i className="ph-bar" aria-hidden="true" />
+              <p className="ph-step-t" style={TYPE.mono}>
+                <span>{pad2(index + 1)}</span>
+                <b>{step.title}</b>
+              </p>
+              <p className="ph-step-d" style={TYPE.body}>
+                {step.text}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }

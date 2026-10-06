@@ -1,34 +1,58 @@
-/** Copy for the home page hero (instance props of the reference's GdHero). */
+/** Copy for the home page hero: Plan2Build's "Build with clarity" opener. */
+
+/** `\n` in a label breaks the line. */
+export type HeroStat = { value: string; label: string };
+/** A labelled pointer on the house drawing; where it sits and its leader lines are set in hero.css. */
+export type HeroCallout = { title: string; lines: string[] };
+export type HeroStep = { title: string; text: string };
+
 export type HeroContent = {
-  /** Empty = "Descriptor · Area" from the site row (descriptor only on phones). */
   eyebrow: string;
-  /** `|` breaks a line, `*word*` rides the yellow beam. */
+  /** `|` breaks a line, `*word*` sits on the yellow plate. */
   heading: string;
-  /** Empty = the site tagline. */
   subCopy: string;
-  /** Main button label; it links to the site's bid link. */
   primary: string;
+  primaryLink: string;
   secondary: string;
   secondaryLink: string;
-  /** Label beside the crane-hook cursor. */
-  cursorLabel: string;
-  /** Flag raised on the roof when the building tops out. */
-  topLabel: string;
-  /** Build stages, separated by `;` (at most six are shown). */
-  stages: string;
-  /** Build the tower and move through projects while nobody is moving the pointer. */
-  autoBuild: boolean;
+  stats: HeroStat[];
+  /** Pointers on the drawing, top to bottom (Plan, Compare, Build, Verify). */
+  callouts: HeroCallout[];
+  /** The rail along the bottom of the hero. */
+  steps: HeroStep[];
+  imageAlt: string;
 };
 
 export const hero: HeroContent = {
-  eyebrow: '',
-  heading: 'Built|to *last.*',
-  subCopy: '',
-  primary: 'Request a bid',
-  secondary: 'See our projects',
-  secondaryLink: '/projects',
-  cursorLabel: 'Lift',
-  topLabel: 'Topped out',
-  stages: 'Groundworks; Steel frame; Envelope; Fit-out; Handover',
-  autoBuild: true,
+  eyebrow: "India's home construction platform",
+  heading: 'Build|with *clarity.*|Not guesswork.',
+  subCopy:
+    'Plan your home, understand the real cost, compare contractors, and keep every construction decision verified — all in one place.',
+  primary: 'Create your build plan',
+  primaryLink: '/#bid',
+  secondary: 'Are you a professional?',
+  /** Same destination as the header's "For contractors". */
+  secondaryLink: '/for-contractors',
+  stats: [
+    { value: '67', label: 'Decisions\nin your plan' },
+    { value: '16', label: 'Construction\nstages' },
+    { value: '6', label: 'Assurance\ngates' },
+    { value: '1', label: 'Permanent\nbuild record' },
+  ],
+  callouts: [
+    { title: 'Plan', lines: ['Cost • BOQ • Specifications', 'Schedule • Cash Flow'] },
+    { title: 'Compare', lines: ['Contractor Quotes', 'Scope Normalisation'] },
+    { title: 'Build', lines: ['Track Decisions', 'Manage Variations'] },
+    { title: 'Verify', lines: ['Six Assurance Gates', 'Evidence • Build Record'] },
+  ],
+  steps: [
+    { title: 'Plan', text: 'Your requirements, cost, and complete Build Plan' },
+    { title: 'Compare', text: 'Standard RFQ and apples-to-apples quotes' },
+    { title: 'Select', text: 'Choose the right contractor with full clarity' },
+    { title: 'Build', text: 'Track decisions, procurement and variations' },
+    { title: 'Verify', text: 'Independent inspections at six key stages' },
+    { title: 'Your Build Record', text: 'A permanent record for your home' },
+  ],
+  imageAlt:
+    'A modern two-storey concrete and timber home, half finished and half drawn as a blueprint wireframe, with dimension lines and yellow blocks',
 };

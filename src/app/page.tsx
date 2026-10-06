@@ -23,9 +23,9 @@ import { Schedule } from '@/sections/shared/Schedule/Schedule';
 import { Trades } from '@/sections/shared/Trades/Trades';
 
 export const metadata = pageMetadata({
-  title: 'Girder — Contractor & Builder: Construction, Renovation & Roofing',
+  title: 'Plan2Build — Build With Clarity, Not Guesswork',
   description:
-    'Girder is a contractor and builder for construction, renovation and roofing. One crew and one contract from groundworks to handover, on the date and the budget we signed.',
+    "Plan2Build is India's home construction platform: plan your home, understand the real cost, compare contractors on the same scope, and keep every construction decision verified in one place.",
   path: '/',
 });
 

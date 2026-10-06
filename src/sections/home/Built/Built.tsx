@@ -5,14 +5,14 @@ import { BuiltSection } from './BuiltSection';
 import { toBuiltProjects } from './model';
 import './built.css';
 
-/** Home page section 03: the first projects as floors of a pinned, scroll-driven showcase. */
+/** Home page section 03: the sample houses as floors of a pinned, scroll-driven showcase. */
 export function Built({ content }: { content: BuiltContent }) {
   return (
     <BuiltSection
       content={content}
       projects={toBuiltProjects(projects, content)}
       heading={content.title.trim() || `Built by ${site.name}`}
-      projectsHref={site.projectsHref}
+      projectsHref={content.secondaryLink.trim() || site.projectsHref}
     />
   );
 }

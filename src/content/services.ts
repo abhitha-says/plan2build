@@ -1,164 +1,199 @@
 import type { Service } from './types';
 
-/** Captured from the reference site's CMS. */
+/**
+ * Plan2Build's services, in the order a family usually meets them. Fees are the working prices
+ * from the latest price board; confirm before launch.
+ */
 
 export const services: Service[] = [
   {
-    "slug": "construction",
-    "name": "Construction",
-    "line": "Ground-up commercial, residential and industrial buildings.",
+    "slug": "home-cost-check",
+    "name": "Home Cost Check",
+    "line": "What a house like yours should cost, before you talk to anyone.",
     "includes": [
-      "Groundworks",
-      "Steel & concrete frame",
-      "Envelope",
-      "Fit-out"
+      "Cost range for your city",
+      "Cost per sq ft",
+      "Time to build",
+      "Stage-by-stage breakdown"
     ],
-    "from": "$2M",
-    "timeline": "6–18 months",
-    "detail": "One general contractor from the first survey stake to the last punch-list item.",
+    "from": "Free",
+    "timeline": "No sign-up",
+    "detail": "Enter your city, built-up area, floors and finish level. See a likely range, never a false exact number.",
     "steps": [
-      "Survey & price",
-      "Groundworks",
-      "Frame",
-      "Envelope",
-      "Fit-out",
-      "Handover"
+      "City",
+      "Built-up area",
+      "Floors",
+      "Finish level",
+      "Your range",
+      "Next steps"
     ],
-    "body": "## What you get\nOne general contractor responsible for every trade on site, a fixed and itemised price, and a schedule you see every Friday.\n\n## Typical jobs\n- Offices and mixed-use buildings\n- Apartment blocks\n- Distribution and industrial halls\n- Clinics and schools\n\n## How we price it\nEvery trade is listed with its quantity and rate. Allowances are named. The price moves only when you change the scope.",
+    "body": "## What you get\nA likely cost range for your house, the cost per sq ft, about how long it takes from excavation to handover, and what each of the 16 stages costs.\n\n## Who it is for\n- Families with a plot and a rough idea of the house\n- Anyone holding a contractor's number who wants a second opinion\n\n## How we price it\nIt is free. No sign-up and no email. Leave a mobile number only if you want a PDF copy.",
     "stat": {
-      "value": "96%",
-      "label": "delivered on or before the date"
+      "value": "16",
+      "label": "stages in the breakdown"
     },
     "photo": {
-      "src": "https://framerusercontent.com/images/Jp8Ezo3VEzsByhTh9SOEuA3V41k.webp",
+      "src": "/images/house-blueprint.webp",
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  {
+    "slug": "quote-review",
+    "name": "Quote Review",
+    "line": "Already have a contractor's quote? Know exactly what you are paying for.",
+    "includes": [
+      "Included, missing, unclear",
+      "Risk areas",
+      "Questions to ask",
+      "60-min expert call"
+    ],
+    "from": "₹4,999",
+    "timeline": "One quote",
+    "detail": "We read your contractor's quote line by line against what a house like yours needs.",
+    "steps": [
+      "Send the quote",
+      "Line-by-line read",
+      "Gaps flagged",
+      "Risks listed",
+      "Expert call",
+      "Your questions"
+    ],
+    "body": "## What you get\nA detailed review of one quotation: what is included, what is missing and what is unclear, the risk areas, and the questions to ask your contractor before you sign. Then a 60-minute discussion with our expert.\n\n## Who it is for\nFamilies who already have a contractor and a quote. We never replace the contractor you have chosen.\n\n## How we price it\nA fixed fee for one quote.",
+    "stat": {
+      "value": "60 min",
+      "label": "with an expert"
+    },
+    "photo": {
+      "src": "https://framerusercontent.com/images/Pnp9zdIU4FbEn5up8ncfnuJLFQ.webp",
       "width": 2000,
       "height": 1342
     }
   },
   {
-    "slug": "renovation",
-    "name": "Renovation",
-    "line": "Kitchens, baths, whole homes and occupied buildings.",
+    "slug": "compare-and-decide",
+    "name": "Compare & Decide",
+    "line": "Up to three quotes, made comparable on equal scope.",
     "includes": [
-      "Strip-out",
-      "Structural changes",
-      "Kitchens & baths",
-      "Finishes"
+      "Up to 3 quotes",
+      "Scope-normalised report",
+      "Specification check",
+      "90-min expert call"
     ],
-    "from": "$60K",
-    "timeline": "4–20 weeks",
-    "detail": "We renovate around the people who live and work there, with a dust wall and a daily clean.",
+    "from": "₹9,999",
+    "timeline": "Up to 3 quotes",
+    "detail": "The cheapest quote is almost never the cheapest house. We show you what each number leaves out.",
     "steps": [
-      "Walk-through",
-      "Fixed bid",
-      "Strip-out",
-      "Structure",
-      "Finishes",
-      "Handover"
+      "Send the quotes",
+      "Common basis",
+      "Every gap priced",
+      "Comparable totals",
+      "Expert call",
+      "You choose"
     ],
-    "body": "## What you get\nA renovation run around the people who live or work in the building: phased work, a dust wall and a site that is clean every evening.\n\n## Typical jobs\n- Kitchens and bathrooms\n- Whole-home renovations\n- Warehouse and loft conversions\n- Occupied offices and shops\n\n## How we price it\nWe open up before we price, so the surprises are in the bid and not in a change order.",
+    "body": "## What you get\nUp to three quotations compared on a common basis. Every difference from the specification, such as missing waterproofing or a lower steel grade, is shown with its rupee impact, then the totals are made comparable. A 90-minute expert discussion follows.\n\n## What we never do\nRank contractors by price or choose for you. You choose.\n\n## How we price it\nA fixed fee for up to three quotes.",
     "stat": {
-      "value": "6 weeks",
-      "label": "for an average kitchen"
+      "value": "3",
+      "label": "quotes on equal scope"
     },
     "photo": {
-      "src": "https://framerusercontent.com/images/jsjeVO7nbXMsZnHrXVq51KWeYFc.webp",
+      "src": "https://framerusercontent.com/images/8VKJkKF0epxdL7UUJUrCaRfgfJs.webp",
+      "width": 2000,
+      "height": 1123
+    }
+  },
+  {
+    "slug": "build-plan",
+    "name": "Complete Build Plan",
+    "line": "Your house written down before anyone quotes on it.",
+    "includes": [
+      "Drawings & 3D views",
+      "Specifications & BOQ",
+      "Schedule & cash flow",
+      "Decisions calendar"
+    ],
+    "from": "₹24,999",
+    "timeline": "Before you dig",
+    "detail": "Cost, specifications, BOQ, payment schedule and a calendar for all 67 decisions, with structural items signed off by a registered engineer.",
+    "steps": [
+      "Your requirement",
+      "Drawings",
+      "Specifications",
+      "BOQ & cost",
+      "Engineer sign-off",
+      "Plan issued"
+    ],
+    "body": "## What you get\nArchitectural drawings and 3D views, a cost estimate, specifications and bill of quantities, inclusions and exclusions, a payment schedule, a monthly cash-flow plan and a decisions calendar. A registered structural engineer signs off every structural item.\n\n## Why it matters\nEvery contractor quotes against the same plan, so their numbers finally mean the same thing.\n\n## How we price it\n₹24,999 to ₹29,999, depending on the size and complexity of the house.",
+    "stat": {
+      "value": "67",
+      "label": "decisions with a decide-by date"
+    },
+    "photo": {
+      "src": "/images/house-villa.webp",
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  {
+    "slug": "stage-checks",
+    "name": "Stage Checks",
+    "line": "An independent engineer on your site at the stage you choose.",
+    "includes": [
+      "On-site inspection",
+      "Specification check",
+      "Photo report",
+      "Corrective actions"
+    ],
+    "from": "₹5,000",
+    "timeline": "Per check",
+    "detail": "Book a check before the work that cannot be undone, such as a slab pour or plastering over pipes.",
+    "steps": [
+      "Book the stage",
+      "Site visit",
+      "Checkpoints",
+      "Photo evidence",
+      "Report",
+      "Fix verified"
+    ],
+    "body": "## What you get\nAn on-site inspection by an engineer we retain, checked against your specification. A report with time-stamped photos, findings and the corrective actions needed.\n\n## Who is checking\nThe inspector is never told who supplied the material, and never works for your contractor.\n\n## How we price it\n₹5,000 to ₹7,500 per stage check.",
+    "stat": {
+      "value": "0",
+      "label": "ties to your contractor"
+    },
+    "photo": {
+      "src": "https://framerusercontent.com/images/JoNU9XW0jqY27exjdfoTfAOM.webp",
       "width": 2000,
       "height": 1342
     }
   },
   {
-    "slug": "roofing",
-    "name": "Roofing",
-    "line": "Re-roofs, repairs and flat roofs with a 30-year warranty.",
+    "slug": "assurance",
+    "name": "Assurance Package",
+    "line": "All six inspection gates, from the foundation to the final snag.",
     "includes": [
-      "Tear-off",
-      "Decking",
-      "Shingle, metal & flat",
-      "Gutters & flashing"
+      "6 independent inspections",
+      "Report at every gate",
+      "Defects closed with proof",
+      "Capped structural remedy"
     ],
-    "from": "$18K",
-    "timeline": "3–14 days",
-    "detail": "A dry roof in days, not weeks, signed off by a manufacturer's inspector.",
+    "from": "₹30,000",
+    "timeline": "Foundation to handover",
+    "detail": "Every stage that cannot be undone is checked before it is covered up.",
     "steps": [
-      "Inspection",
-      "Written quote",
-      "Tear-off",
-      "Decking",
-      "New roof",
-      "Warranty"
+      "Foundation",
+      "Plinth beam",
+      "Every slab",
+      "Before plaster",
+      "Waterproofing",
+      "Final snag"
     ],
-    "body": "## What you get\nA dry roof in days, with new decking where it is needed, proper flashing and a warranty in writing.\n\n## Typical jobs\n- Shingle and cedar re-roofs\n- Standing-seam metal\n- Flat and green roofs\n- Storm repairs and gutters\n\n## How we price it\nPer square, with tear-off, disposal and decking allowance shown as separate lines.",
+    "body": "## What you get\nIndependent inspections at all six gates: the foundation before pouring, the plinth beam, every slab before pouring, before plastering, waterproofing, and the final snag check. A plain-language report at each one, and defects stay open until the fix is checked.\n\n## Our promise\nIf a structural defect appears later in work we inspected, Plan2Build pays to fix it, up to a cap.\n\n## How we price it\nFrom ₹30,000, depending on the size of the house and the number of slabs.",
     "stat": {
-      "value": "30 years",
-      "label": "roof warranty"
+      "value": "6",
+      "label": "gates checked before they are covered"
     },
     "photo": {
-      "src": "https://framerusercontent.com/images/XHEBkFd2NSQCk9ElJJMusVR74.webp",
-      "width": 2000,
-      "height": 1342
-    }
-  },
-  {
-    "slug": "design-build",
-    "name": "Design-build",
-    "line": "Architect, engineer and builder under one contract.",
-    "includes": [
-      "Feasibility",
-      "Drawings & permits",
-      "Fixed price",
-      "Construction"
-    ],
-    "from": "$400K",
-    "timeline": "8–14 months",
-    "detail": "One team draws it, prices it and builds it, so the drawing and the budget always agree.",
-    "steps": [
-      "Feasibility",
-      "Concept",
-      "Fixed price",
-      "Permits",
-      "Construction",
-      "Handover"
-    ],
-    "body": "## What you get\nArchitect, engineer and builder under one contract, so the drawing and the budget always agree.\n\n## Typical jobs\n- Custom homes\n- Extensions and additions\n- Small commercial buildings\n\n## How we price it\nA paid feasibility study gives you a fixed price before the detailed design starts.",
-    "stat": {
-      "value": "1",
-      "label": "contract instead of three"
-    },
-    "photo": {
-      "src": "https://framerusercontent.com/images/TYcxiP9fdNIWsyWjhiO1UKxDXc.webp",
-      "width": 2000,
-      "height": 1342
-    }
-  },
-  {
-    "slug": "fit-out",
-    "name": "Fit-out",
-    "line": "Offices, shops and clinics made ready to open.",
-    "includes": [
-      "Partitions & ceilings",
-      "Mechanical & electrical",
-      "Flooring",
-      "Joinery"
-    ],
-    "from": "$120K",
-    "timeline": "6–16 weeks",
-    "detail": "An empty shell turned into a working space, on the date your lease starts.",
-    "steps": [
-      "Measure",
-      "Design freeze",
-      "Fixed bid",
-      "Build",
-      "Commission",
-      "Open"
-    ],
-    "body": "## What you get\nAn empty shell turned into a working space on the date your lease starts.\n\n## Typical jobs\n- Offices\n- Shops and restaurants\n- Clinics and labs\n\n## How we price it\nPer square foot by finish level, with mechanical and electrical shown separately.",
-    "stat": {
-      "value": "12 weeks",
-      "label": "average office fit-out"
-    },
-    "photo": {
-      "src": "https://framerusercontent.com/images/kV5zpLA1JIXUjGpADRyFuTb4.webp",
+      "src": "https://framerusercontent.com/images/uFLJBXT5LSqYG92e9GGvVtR1hk.webp",
       "width": 2000,
       "height": 1342
     }
