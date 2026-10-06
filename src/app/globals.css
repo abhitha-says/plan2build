@@ -1,0 +1,59 @@
+/*
+ * Document-level styles. Everything here mirrors the reference site's base layer: its palette,
+ * its three font stacks, and the reset its pages were rendered on (12px sans-serif body text,
+ * antialiased glyphs, night background behind the page).
+ */
+:root {
+  --gd-bone: #e8e6e0;
+  --gd-ink: #14171a;
+  --gd-brass: #ffc31f;
+  --gd-pine: #23303a;
+  --gd-fog: #cfccc4;
+  --gd-stone: #6c7074;
+  --gd-cloud: #ffffff;
+  --gd-night: #0d1012;
+
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', Impact, Arial, sans-serif;
+  --font-body: 'Barlow', Inter, system-ui, -apple-system, Arial, sans-serif;
+  --font-mono: 'Reddit Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: inherit;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+body {
+  background: var(--gd-night);
+}
+
+/*
+ * The page column. Sections switch layout on the width they are given (phone under 810px,
+ * tablet under 1100px), which excludes the scrollbar, so they query this container rather
+ * than the viewport.
+ */
+.site {
+  container: site / inline-size;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
